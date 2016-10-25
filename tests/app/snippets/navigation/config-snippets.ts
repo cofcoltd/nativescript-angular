@@ -6,10 +6,12 @@ class GroceryComponent { }
 class GroceriesApp { }
 
 // >> router-config
-const routes = [
+import { Routes } from "@angular/router";
+
+export const routes: Routes = [
     { path: "login", component: LoginComponent },
     { path: "groceries", component: GroceryListComponent },
-    { path: "grocery/:id", component: GroceryComponent },
+    { path: "grocery/:id", component: GroceryComponent }
 ];
 // << router-config
 
@@ -29,7 +31,7 @@ export class GroceriesAppModule {}
 // >> router-bootstrap
 import { platformNativeScriptDynamic } from "nativescript-angular/platform";
 // >> (hide)
-function start_snippet() {  
+function start_snippet() {
 // << (hide)
 platformNativeScriptDynamic().bootstrapModule(GroceriesAppModule);
 // << router-bootstrap
